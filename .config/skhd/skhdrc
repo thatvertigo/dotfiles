@@ -1,0 +1,39 @@
+cmd - return : osascript -e 'tell application "iTerm2" to create window with default profile command ""' || open -na iTerm
+
+cmd + shift - return : osascript -e 'tell application "Helium" to create window with default profile command ""' || open -na Helium
+
+cmd - 1 : if [[ $(yabai -m space --focus 1 2>&1) == "could not locate space with mission-control index '1'." ]]; then yabai -m space --create; fi
+cmd - 2 : if [[ $(yabai -m space --focus 2 2>&1) == "could not locate space with mission-control index '2'." ]]; then yabai -m space --create; fi
+cmd - 3 : if [[ $(yabai -m space --focus 3 2>&1) == "could not locate space with mission-control index '3'." ]]; then yabai -m space --create; fi
+cmd - 4 : if [[ $(yabai -m space --focus 4 2>&1) == "could not locate space with mission-control index '4'." ]]; then yabai -m space --create; fi
+cmd - 5 : if [[ $(yabai -m space --focus 5 2>&1) == "could not locate space with mission-control index '5'." ]]; then yabai -m space --create; fi
+cmd - 6 : if [[ $(yabai -m space --focus 6 2>&1) == "could not locate space with mission-control index '6'." ]]; then yabai -m space --create; fi
+cmd - 7 : if [[ $(yabai -m space --focus 7 2>&1) == "could not locate space with mission-control index '7'." ]]; then yabai -m space --create; fi
+cmd - 8 : if [[ $(yabai -m space --focus 8 2>&1) == "could not locate space with mission-control index '8'." ]]; then yabai -m space --create; fi
+cmd - 9 : if [[ $(yabai -m space --focus 9 2>&1) == "could not locate space with mission-control index '9'." ]]; then yabai -m space --create; fi
+cmd - 0 : if [[ $(yabai -m space --focus 10  2>&1) == "could not locate space with mission-control index '10'." ]]; then yabai -m space --create; fi
+
+cmd + shift - 1 : yabai -m window --space 1
+cmd + shift - 2 : yabai -m window --space 2
+cmd + shift - 3 : yabai -m window --space 3
+cmd + shift - 4 : yabai -m window --space 4
+cmd + shift - 5 : yabai -m window --space 5
+cmd + shift - 6 : yabai -m window --space 6
+cmd + shift - 7 : yabai -m window --space 7
+cmd + shift - 8 : yabai -m window --space 8
+cmd + shift - 9 : yabai -m window --space 9
+cmd + shift - 0 : yabai -m window --space 10
+
+cmd - h : yabai -m window --focus west
+cmd - j : yabai -m window --focus south
+cmd - k : yabai -m window --focus north
+cmd - l : yabai -m window --focus east
+
+cmd + shift - h : yabai -m window --swap west
+cmd + shift - j : yabai -m window --swap south
+cmd + shift - k : yabai -m window --swap north
+cmd + shift - l : yabai -m window --swap east
+
+cmd + alt - space : yabai -m window --toggle float
+
+cmd + shift - q : yabai -m window --close

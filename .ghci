@@ -1,0 +1,10 @@
+:set prompt "\ESC[1;34mλ \ESC[0m"
+:set prompt-cont "\ESC[90m↳ \ESC[0m"
+:set +m +t
+:seti -interactive-print=print
+:set -ferror-spans           -- underline exact span for type errors (when supported)
+:set -fshow-loaded-modules   -- show what got loaded on :load / :reload
+:set -Wall
+:set -Wcompat
+:def hoogle \s -> return $ ":! hoogle \"" ++ s ++ "\""
+:set editor nvim
