@@ -1,0 +1,26 @@
+general.import = [
+  # "~/.config/alacritty/catppuccin-latte.toml"
+  "~/.config/alacritty/catppuccin-frappe.toml"
+  # "~/.config/alacritty/catppuccin-macchiato.toml"
+  # "~/.config/alacritty/catppuccin-mocha.toml"
+]
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 11.5
+normal = { family = "PragmataPro Mono", style = "Regular" } 
+bold = { family = "PragmataPro Mono", style = "Bold" } 
+italic = { family = "PragmataPro Mono", style = "Italic" } 
+bold_italic = { family = "PragmataPro Mono", style = "Bold Italic" } 
+
+[terminal]
+shell = "zsh"
+
+[window]
+opacity = 0.97
+
+[window.padding]
+x = 1
+y = 1

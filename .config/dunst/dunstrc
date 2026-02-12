@@ -1,0 +1,21 @@
+[global]
+font = "Pragmata Pro"
+frame_color = "#8caaee"
+separator_color= frame
+highlight = "#8caaee"
+frame_width = 1
+offset = (10, 10)
+width = (0, 500)
+
+[urgency_low]
+background = "#303446"
+foreground = "#c6d0f5"
+
+[urgency_normal]
+background = "#303446"
+foreground = "#c6d0f5"
+
+[urgency_critical]
+background = "#303446"
+foreground = "#c6d0f5"
+frame_color = "#ef9f76"
