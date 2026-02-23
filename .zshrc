@@ -40,3 +40,5 @@ export PATH="$HOME/Library/Python/3.9/bin:$PATH"
 
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 
+alias ls="eza -l -a --grid --icons --color --no-permissions --no-user --time-style relative"
+alias cat="bat -p --paging=never"
