@@ -23,5 +23,11 @@ return {
         config = function() require('lualine').setup() end,
         dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
-    {'akinsho/toggleterm.nvim', version = "*", config = true}
+    {'akinsho/toggleterm.nvim', version = "*", config = true},
+    {
+        "nvzone/floaterm",
+        dependencies = "nvzone/volt",
+        opts = {},
+        cmd = "FloatermToggle",
+    }
 }

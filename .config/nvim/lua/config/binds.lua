@@ -16,7 +16,7 @@ map('n', '<leader>J', ':rightbelow new<CR>', opts)  -- new buffer below
 -- Toggling Tree
 map("n", "<leader>t", ":NvimTreeToggle<CR>", opts)
 
-map("n", "<leader>ot", ":ToggleTerm<CR>", opts)
+map("n", "<leader>ot", ":FloatermToggle<CR>", opts)
 
 -- Searching
 map("n", "<leader>ff", Snacks.picker.files, opts)
