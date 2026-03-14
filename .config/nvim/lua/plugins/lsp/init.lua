@@ -2,6 +2,17 @@ lsps = {
     "lua_ls"
 }
 
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = args.buf,
+      callback = function()
+        vim.lsp.buf.format({ async = false })
+      end,
+    })
+  end,
+})
+
 return {
     { 'mason-org/mason.nvim', opts = {} },
     {
