@@ -42,5 +42,12 @@ return {
         opts = {},
         cmd = "FloatermToggle",
     },
-    "unblevable/quick-scope"
+    "unblevable/quick-scope",
+    {
+        "benomahony/uv.nvim",
+        ft = { "python" },
+        opts = {
+            picker_integration = true,
+        },
+    }
 }
