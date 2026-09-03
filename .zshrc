@@ -15,7 +15,7 @@ eval "$(starship init zsh)"
 
 . "$HOME/.local/bin/env"
 
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
