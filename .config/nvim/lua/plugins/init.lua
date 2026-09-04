@@ -3,6 +3,7 @@ vim.g.qs_highlight_on_keys = { 'f', 'F', 't', 'T' }
 return {
     require("plugins.treesitter"),
     require("plugins.nvimtree"),
+    require("plugins.avante"),
     "nvim-tree/nvim-web-devicons",
     {
         "sainnhe/sonokai",
@@ -77,67 +78,5 @@ return {
         ---@module 'render-markdown'
         ---@type render.md.UserConfig
         opts = {},
-    },
-    {
-        "olimorris/codecompanion.nvim",
-        version = "^19.0.0",
-        opts = {
-            adapters = {
-                acp = {
-                    claude_code = function()
-                        return require("codecompanion.adapters").extend("claude_code", {
-                            env = {
-                                CLAUDE_CODE_OAUTH_TOKEN = require("secret")
-                                    .CLAUDE_CODE_OAUTH_KEY,
-                            },
-                        })
-                    end,
-                },
-                http = {
-                    anthropic = function()
-                        return require("codecompanion.adapters").extend("anthropic", {
-                            env = {
-                                api_key = require("secret").ANTHROPIC_API_KEY,
-                                ["anthropic-workspace-id"] = require("secret").ANTHROPIC_WORKSPACE_ID
-                            },
-                        })
-                    end,
-                },
-            },
-            interactions = {
-                chat = {
-                    adapter = "claude_code",
-                },
-                cli = {
-                    agent = "claude_code",
-                    agents = {
-                        claude_code = {
-                            cmd = "claude",
-                            args = {},
-                            description = "Claude Code CLI",
-                            provider = "terminal",
-                        },
-                    },
-                },
-                inline = {
-                    adapter = "anthropic",
-                },
-                cmd = {
-                    adapter = "anthropic",
-                },
-            },
-        },
-        keys = {
-            { "<leader>a",  group = "CodeCompanion" },
-            { "<leader>ac", "<cmd>CodeCompanionChat<cr>",    desc = "CodeCompanion Chat" },
-            { "<leader>ao", "<cmd>CodeCompanionCLI<cr>",     desc = "CodeCompanion CLI" },
-            { "<leader>ai", "<cmd>CodeCompanion<cr>",        desc = "CodeCompanion Inline" },
-            { "<leader>am", "<cmd>CodeCompanion<cr>",        desc = "CodeCompanion Cmd" },
-            { "<leader>aa", "<cmd>CodeCompanionActions<cr>", desc = "CodeCompanion Actions" },
-        },
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "nvim-treesitter/nvim-treesitter",
-        },
     },
 }
