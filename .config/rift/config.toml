@@ -1,0 +1,144 @@
+[settings]
+default_disable = false
+focus_follows_mouse = true
+hot_reload = true
+
+[settings.layout]
+mode = "bsp"
+
+[settings.layout.gaps.outer]
+top = 20.0
+bottom = 20.0
+left = 20.0
+right = 20.0
+
+[settings.layout.gaps.inner]
+horizontal = 20.0
+vertical = 20.0
+
+
+# ------------------------------------------------------------
+# Virtual workspaces
+# ------------------------------------------------------------
+
+[virtual_workspaces]
+enabled = true
+default_workspace_count = 10
+default_workspace = 0
+auto_assign_windows = true
+preserve_focus_per_workspace = true
+
+# Keep cmd+N deterministic rather than toggling back to the previous
+# workspace when pressing the current workspace key again.
+workspace_auto_back_and_forth = false
+
+
+# ------------------------------------------------------------
+# Modifier aliases
+# ------------------------------------------------------------
+
+[modifier_combinations]
+cmd_shift = "Meta + Shift"
+cmd_alt = "Meta + Alt"
+
+
+# ------------------------------------------------------------
+# Key bindings
+# ------------------------------------------------------------
+
+[keys]
+
+# Terminal
+"Meta + Return" = {
+    exec = [
+        "sh",
+        "-c",
+        "osascript -e 'tell application \"iTerm2\" to create window with default profile command \"\"' || open -na iTerm"
+    ]
+}
+
+# Helium
+"Meta + Shift + Return" = {
+    exec = [
+        "sh",
+        "-c",
+        "osascript -e 'tell application \"Helium\" to create window with default profile command \"\"' || open -na Helium"
+    ]
+}
+
+
+# ------------------------------------------------------------
+# Focus windows
+# ------------------------------------------------------------
+
+"Meta + H" = { move_focus = "left" }
+"Meta + J" = { move_focus = "down" }
+"Meta + K" = { move_focus = "up" }
+"Meta + L" = { move_focus = "right" }
+
+
+# ------------------------------------------------------------
+# Rearrange windows
+#
+# Yabai's `window --swap <direction>` doesn't have a literal
+# directional `swap` command in Rift. `move_node` is the closest
+# equivalent for BSP rearrangement.
+# ------------------------------------------------------------
+
+"cmd_shift + H" = { move_node = "left" }
+"cmd_shift + J" = { move_node = "down" }
+"cmd_shift + K" = { move_node = "up" }
+"cmd_shift + L" = { move_node = "right" }
+
+
+# ------------------------------------------------------------
+# Floating
+# ------------------------------------------------------------
+
+"cmd_alt + Space" = { toggle_window_floating = {} }
+
+
+# ------------------------------------------------------------
+# Close focused window
+# ------------------------------------------------------------
+
+"cmd_shift + Q" = { close_window = {} }
+
+# ------------------------------------------------------------
+# Extras for rift workspaces
+# ------------------------------------------------------------
+
+# "Meta + 1" = { switch_to_workspace = 0 }
+# "Meta + 2" = { switch_to_workspace = 1 }
+# "Meta + 3" = { switch_to_workspace = 2 }
+# "Meta + 4" = { switch_to_workspace = 3 }
+# "Meta + 5" = { switch_to_workspace = 4 }
+# "Meta + 6" = { switch_to_workspace = 5 }
+# "Meta + 7" = { switch_to_workspace = 6 }
+# "Meta + 8" = { switch_to_workspace = 7 }
+# "Meta + 9" = { switch_to_workspace = 8 }
+# "Meta + 0" = { switch_to_workspace = 9 }
+# 
+# 
+# # ------------------------------------------------------------
+# # Move window to workspace
+# # ------------------------------------------------------------
+# 
+# "cmd_shift + 1" = { move_window_to_workspace = 0 }
+# "cmd_shift + 2" = { move_window_to_workspace = 1 }
+# "cmd_shift + 3" = { move_window_to_workspace = 2 }
+# "cmd_shift + 4" = { move_window_to_workspace = 3 }
+# "cmd_shift + 5" = { move_window_to_workspace = 4 }
+# "cmd_shift + 6" = { move_window_to_workspace = 5 }
+# "cmd_shift + 7" = { move_window_to_workspace = 6 }
+# "cmd_shift + 8" = { move_window_to_workspace = 7 }
+# "cmd_shift + 9" = { move_window_to_workspace = 8 }
+# "cmd_shift + 0" = { move_window_to_workspace = 9 }
+# 
+# [settings.gestures]
+# enabled = true
+# consume_dock_swipe = true
+# invert_horizontal_swipe = false
+# skip_empty = false
+# fingers = 4
+# haptics_enabled = true
