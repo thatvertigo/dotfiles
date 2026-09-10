@@ -1,12 +1,13 @@
 -- Languages
-languages ={
+languages = {
     'python',
     'zig',
     'lua'
-} 
+}
 
 return {
     "nvim-treesitter/nvim-treesitter",
+    branch = "main",
     lazy = false,
     build = ":TSUpdate",
     config = function()
